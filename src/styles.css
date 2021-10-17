@@ -1,0 +1,31 @@
+/* You can add global styles to this file, and also import other style files */
+.hero{
+ border: 1px solid black;
+ background-image: url("./assets/3.jpg");
+ height: 250px; 
+ 
+}
+.hero div{
+    color : white;
+}
+.skills{
+    background-color: thistle;
+}
+.custom-card{
+    width: 25%;
+    height: 200px;
+    border-radius: 5px;
+    background-color: whitesmoke;
+}
+#dark{
+    background-color: #121212 ;
+}
+footer{
+    background-color: #121212 ;
+    color: white;
+}
+.contact{
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
