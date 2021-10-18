@@ -1,0 +1,24 @@
+<div class="container-fluid">
+    <section class="skills">
+        <div class="row">
+          <div class="row  mt-4">
+            <div class="text-center">
+              <h2>Skills</h2>
+              <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Porro consectetur rerum sit eius, maxime omnis, tempore voluptas iste est praesentium cum quae placeat natus hic, non totam blanditiis temporibus sed?</p>
+            </div>  
+          </div>
+          <div class="row mb-4">
+            <div class="col-6 d-flex justify-content-center">
+              
+              <ul><h4>Experience</h4>
+                <li>Web development</li>
+                <li>Cross-platform mobile development</li>
+              </ul>
+            </div>
+            <div class="col-6">
+              <p *ngFor="let skill of skills">{{skill.name}}<ngb-progressbar type="success" [value]="skill.rate"></ngb-progressbar> </p>
+            </div>
+          </div>
+        </div>
+    </section>
+</div>
