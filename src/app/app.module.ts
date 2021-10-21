@@ -1,16 +1,46 @@
 import { NgModule } from '@angular/core';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { BrowserModule } from '@angular/platform-browser';
+
+
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
+import { ProductitemComponent } from './productitem/productitem.component';
+import { ProductslistComponent } from './productslist/productslist.component';
+import { NavbarComponent } from './navbar/navbar.component';
+import { StockPipe } from './stock.pipe';
+import { LoginComponent } from './login/login.component';
+import { RegisterComponent } from './register/register.component';
+import { ErrorComponent } from './error/error.component';
+import { ProductDetailsComponent } from './product-details/product-details.component';
+import { CatMenComponent } from './cat-men/cat-men.component';
+import { CatWomenComponent } from './cat-women/cat-women.component';
+import { CatJewelComponent } from './cat-jewel/cat-jewel.component';
+import { CatElectComponent } from './cat-elect/cat-elect.component';
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    ProductitemComponent,
+    ProductslistComponent,
+    NavbarComponent,
+    StockPipe,
+    LoginComponent,
+    RegisterComponent,
+    ErrorComponent,
+    ProductDetailsComponent,
+    CatMenComponent,
+    CatWomenComponent,
+    CatJewelComponent,
+    CatElectComponent,
+    
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    FormsModule,
+    ReactiveFormsModule,
   ],
   providers: [],
   bootstrap: [AppComponent]
