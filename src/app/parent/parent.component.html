@@ -1,0 +1,7 @@
+<div class="container-fluid">
+    <app-input (sendInput) = "recieveInput($event)"></app-input>
+    <div class="row" *ngFor = "let recieved of recievedTodos">
+        <app-output [rec] = "recieved"></app-output>
+    </div>
+    
+</div>

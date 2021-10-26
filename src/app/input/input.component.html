@@ -1,0 +1,12 @@
+<section>
+    <div class="row">
+        <form>
+            <div class="mb-3">
+              <label for="task" class="form-label">Enter your to do task</label>
+              <input type="text" class="form-control" [(ngModel)] = "toDo" [ngModelOptions]="{standalone: true}" id="task" >
+            </div>
+            <button type="button" class="btn btn-primary" (click) = "sendData()">add</button>
+          </form>
+    </div>
+    
+</section>
