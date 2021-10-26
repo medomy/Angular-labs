@@ -1,8 +1,7 @@
 import { NgModule } from '@angular/core';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { BrowserModule } from '@angular/platform-browser';
-
-
+import { HttpClientModule } from '@angular/common/http';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -19,6 +18,8 @@ import { CatWomenComponent } from './cat-women/cat-women.component';
 import { CatJewelComponent } from './cat-jewel/cat-jewel.component';
 import { CatElectComponent } from './cat-elect/cat-elect.component';
 
+import { CartPageComponent } from './cart-page/cart-page.component';
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -34,6 +35,7 @@ import { CatElectComponent } from './cat-elect/cat-elect.component';
     CatWomenComponent,
     CatJewelComponent,
     CatElectComponent,
+    CartPageComponent,
     
   ],
   imports: [
@@ -41,6 +43,8 @@ import { CatElectComponent } from './cat-elect/cat-elect.component';
     AppRoutingModule,
     FormsModule,
     ReactiveFormsModule,
+    HttpClientModule,
+    
   ],
   providers: [],
   bootstrap: [AppComponent]

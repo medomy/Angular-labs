@@ -1,5 +1,7 @@
 import { Component, OnInit  } from '@angular/core';
 import { Products  } from '../products';
+import { Router } from '@angular/router';
+import { FetchService } from '../fetch.service';
 
 @Component({
   selector: 'app-productslist',
@@ -7,7 +9,7 @@ import { Products  } from '../products';
   styleUrls: ['./productslist.component.css']
 })
 export class ProductslistComponent implements OnInit {
-  products_collection : Array<Products> = [
+  /*products_collection : Array<Products> = [
     {
     "id": 1,
     "title": "Fjallraven - Foldsack No. 1 Backpack, Fits 15 Laptops",
@@ -248,14 +250,22 @@ export class ProductslistComponent implements OnInit {
     "count_in_stock": 0
     }
     }
-    ]
-
-  constructor() { }
+  ]*/
+  products_collection ;
+  constructor(private route : Router , private fetchser : FetchService) { }
 
   ngOnInit(): void {
+    this.fetchser.Getproduct().subscribe(
+      (data)=>{
+        console.log(data);
+        this.products_collection = data;
+      }
+    )
   }
   recieve(prod : Products){
-    console.log(prod);
+    //console.log(prod);
+    this.fetchser.Getoneproduct(prod.id).subscribe((data)=>console.log(data));
+    this.route.navigate([`Details/${prod.id}`]);
   }
 
 }

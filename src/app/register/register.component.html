@@ -34,9 +34,9 @@
                     <label for="PasswordCheckID" class="form-label">type your password again </label>
                     <input type="password" class="form-control" id="PasswordCheckID" name="PasswordCheck" formControlName="PasswordCheck">
                     <div *ngIf="RegestirationForm.controls.PasswordCheck.touched && RegestirationForm.controls.PasswordCheck.errors?.required" style="color: red;">Required</div>
-                    <div *ngIf="RegestirationForm.controls.PasswordCheck.touched && RegestirationForm.controls.PasswordCheck.value !== RegestirationForm.controls.Password.value " style="color: red;">must equal to real password</div>
+                    <div *ngIf="RegestirationForm.controls.PasswordCheck.touched && RegestirationForm.controls.PasswordCheck.errors?.mustMatch" style="color: red;">must equal to real password</div>
                   </div>
-                <button type="submit" class="btn btn-primary" >Register</button>
+                <button type="submit" class="btn btn-primary" *ngIf="RegestirationForm.valid">Register</button>
             </form>
         </div>
     </div>

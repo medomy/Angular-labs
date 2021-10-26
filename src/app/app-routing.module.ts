@@ -8,6 +8,9 @@ import { CatMenComponent } from './cat-men/cat-men.component';
 import { CatWomenComponent } from './cat-women/cat-women.component';
 import { CatJewelComponent } from './cat-jewel/cat-jewel.component';
 import { CatElectComponent } from './cat-elect/cat-elect.component';
+import { ProductDetailsComponent } from './product-details/product-details.component';
+import { CartPageComponent } from './cart-page/cart-page.component';
+import { CartGuardGuard } from './cart-guard.guard';
 
 const routes: Routes = [
   {
@@ -15,8 +18,17 @@ const routes: Routes = [
     component:ProductslistComponent
   },
   {
-    path:'log-in',
-    component:LoginComponent
+    path:'Access',
+    children:[
+      {
+        path:'log-in',
+        component:LoginComponent
+      },
+      {
+        path:'register',
+        component:RegisterComponent
+      },
+    ]
   },
   {
     path:'Men',
@@ -35,8 +47,15 @@ const routes: Routes = [
     component:CatElectComponent
   },
   {
-    path:'register',
-    component:RegisterComponent
+    path:'Details/:id',
+    component:ProductDetailsComponent
+
+  },
+  {
+    path:'Cart',
+    component:CartPageComponent,
+    canActivate : [CartGuardGuard]
+
   },
   {
     path:'**',
