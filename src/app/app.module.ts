@@ -1,7 +1,7 @@
 import { NgModule } from '@angular/core';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { BrowserModule } from '@angular/platform-browser';
-import { HttpClientModule } from '@angular/common/http';
+import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -19,6 +19,8 @@ import { CatJewelComponent } from './cat-jewel/cat-jewel.component';
 import { CatElectComponent } from './cat-elect/cat-elect.component';
 
 import { CartPageComponent } from './cart-page/cart-page.component';
+import { LoadercompComponent } from './loadercomp/loadercomp.component';
+import { LoaderintInterceptor } from './loaderint.interceptor';
 
 @NgModule({
   declarations: [
@@ -36,6 +38,7 @@ import { CartPageComponent } from './cart-page/cart-page.component';
     CatJewelComponent,
     CatElectComponent,
     CartPageComponent,
+    LoadercompComponent,
     
   ],
   imports: [
@@ -46,7 +49,13 @@ import { CartPageComponent } from './cart-page/cart-page.component';
     HttpClientModule,
     
   ],
-  providers: [],
+  providers: [
+    {
+      provide : HTTP_INTERCEPTORS,
+      useClass: LoaderintInterceptor,
+      multi : true
+    }
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
